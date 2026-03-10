@@ -18,6 +18,10 @@ to do :
 - creature editor
 
 
+--
+
+- update the installer script so it can modify the ._pth automatically
+
 ---
 
 # Installation and Running Guide - Cice
