@@ -77,15 +77,20 @@ To run the python scripts from the project you should use the embedded python ap
 
 **Only run AFTER the project is installed**
 
-1. Open the Working Directory
-2. open the the embedded python folder ( "python-3.x.x-embed-amd64" )
-3. Click and Run Python.exe
-4. Change Working Directory from the embedded python folder ( "python-3.x.x-embed-amd64" ) to the Working Folder
+1.  Open the Working Directory
+2.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
+3.  Click and Run Python.exe
+4.  Change Working Directory from the embedded python folder ( "python-3.x.x-embed-amd64" ) to the Working Folder
 -  use this command :
-  exec(open("change-dir.py").read())
+--
+exec(open("change-dir.py").read())
+--
 5. Run the project Scripts
 - use this command and modify the command according to which script you need or want to run
- for example : exec(open("demomunk.py").read())
+ for example :
+--
+exec(open("demomunk.py").read())
+--
 
 ---
 
