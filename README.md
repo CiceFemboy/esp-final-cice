@@ -19,14 +19,14 @@ to do :
 
 ---
 
-Installation and Running Guide - Cice
+# Installation and Running Guide - Cice
 
 Working Systems :
 
 WINDOWS 10/11 x86_64 64bit
 ...
 
--- Installation Process --
+**-- Installation Process --**
 
 1. Create an empty working folder on the desktop or anywhere accessible
 
@@ -62,7 +62,7 @@ This Installation process install pip which is the most used package downloader 
 
 Now your project should be Installed
 
--- Running The Project --
+**-- Running The Project --**
 
 To run the python scripts from the project you should use the embedded python application. you could use other means but this guide will not help you with those. 
 
@@ -80,7 +80,7 @@ To run the python scripts from the project you should use the embedded python ap
 
 ---
 
-Troubleshooting with the installation process
+# Troubleshooting with the installation process
 
 1. Pip does not install properly and is not usable
 
@@ -106,7 +106,7 @@ only the change-dirpy script is located in the embedded python folder ( "python-
 
 ---
 
-Credits :
+**Credits :**
 
 # Python Project
 using the embedded python application from the official python website ( python-embed 3.13.12 for amd64 (x86_64) )
