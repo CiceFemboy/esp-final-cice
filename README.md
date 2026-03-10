@@ -24,7 +24,8 @@ to do :
 
 **Working Systems :**
 
-WINDOWS 10/11 x86_64 64bit
+- WINDOWS 10/11 x86_64 64bit
+
 ...
 
 **-- Installation Process --**
@@ -56,8 +57,13 @@ WINDOWS 10/11 x86_64 64bit
   - Go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe
   - Run the following command, it will run the installation scripts :
 
+--
+
 import os
+
 exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
+
+--
 
 This important as it changes at first the working directory inside the python interpretor to the project default directory outside of the "python-3.x.x-embed-amd64" folder and reads the installation scripts.
 
@@ -95,8 +101,13 @@ Insert the library paths after "#import site" inside the "python313._pth" file
 
 insert the following string :
 
+--
+
 Lib
+
 Lib\site-packages
+
+--
 
 2. Scripts does not exists
 
