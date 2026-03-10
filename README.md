@@ -53,8 +53,9 @@ WINDOWS 10/11 x86_64 64bit
 
   - Go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe
   - Run the following command, it will run the installation scripts :
+
 >> import os
-exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
+>> exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
 
 This important as it changes at first the working directory inside the python interpretor to the project default directory outside of the "python-3.x.x-embed-amd64" folder and reads the installation scripts.
 
@@ -88,12 +89,12 @@ This issue stems from pip package module being successfully installed but the mo
 
 to fix this issue you will need to modify manually the "._pth" file and append (add it at the end of the file) the required libraries paths so the python interpreter will recognize ad be able to import the pip module and use pip.
 
-Insert the library paths after "#import site" inside the "python313._pth" file :
-insert the following string 
+Insert the library paths after "#import site" inside the "python313._pth" file
 
->>
-Lib
-Lib\site-packages
+insert the following string :
+
+>>Lib
+>>Lib\site-packages
 
 2. Scripts does not exists
 
@@ -108,12 +109,12 @@ only the change-dirpy script is located in the embedded python folder ( "python-
 
 **Credits :**
 
-# Python Project
+- **Python Project**
 using the embedded python application from the official python website ( python-embed 3.13.12 for amd64 (x86_64) )
 Credits to the Python Project contributors and to Python.org
 link : https://www.python.org/
 download link for the exact version we used : https://www.python.org/ftp/python/3.13.12/python-3.13.12-embed-amd64.zip
 
-# Get-pip.py Script
+- **Get-pip.py Script**
 got the get-pip.py script on github. credits to the contributors and those who made it and continued the project.
 link : https://github.com/pypa/get-pip
