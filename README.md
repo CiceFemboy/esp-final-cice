@@ -21,7 +21,7 @@ to do :
 
 # Installation and Running Guide - Cice
 
-Working Systems :
+**Working Systems :**
 
 WINDOWS 10/11 x86_64 64bit
 ...
@@ -37,6 +37,7 @@ WINDOWS 10/11 x86_64 64bit
   - Download the embeddded python zip from the repository, (we took an online version)
   - Place the python zip inside the working folder
   - Unzip the compressed file and extract in a folder 
+
 ( on windows use "Extract All" after right clicking on the compressed file, it should uncompress/unzip the file then create a folder with the same name and place the content inside automatically)
 
 3. Download Install the installer scripts
@@ -107,7 +108,7 @@ only the change-dirpy script is located in the embedded python folder ( "python-
 
 ---
 
-**Credits :**
+# Credits
 
 - **Python Project**
 using the embedded python application from the official python website ( python-embed 3.13.12 for amd64 (x86_64) )
