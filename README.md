@@ -4,6 +4,7 @@ Done:
 - OOP refactor
 - Added neat functionality
 - code rewritten so that creatures are written with json files (examples in creatures folder)
+- update the installer script so it can modify the ._pth automatically (updated and now working)
 
 -----------------------------------
 
@@ -20,7 +21,7 @@ to do :
 
 --
 
-- update the installer script so it can modify the ._pth automatically
+- create a bat system executable to automatically set up the python environment rather than manually installing.
 
 ---
 
