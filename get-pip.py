@@ -116,7 +116,7 @@ def bootstrap(tmpdir):
     # any user-requested packages from PyPI.
     from pip._internal.cli.main import main as pip_entry_point
     args = determine_pip_install_arguments()
-    sys.exit(pip_entry_point(args))
+    pip_entry_point(args)
 
 
 def main():
