@@ -1,6 +1,6 @@
 import neat
 import pickle
-from demomunk import Game
+from demomunk.Game import Game
 import os
 import tempfile
 
