@@ -89,15 +89,20 @@ To run the python scripts from the project you should use the embedded python ap
 -  use this command :
 
 --
+
 exec(open("change-dir.py").read())
+
 --
 
 5. Run the project Scripts
 - use this command and modify the command according to which script you need or want to run
  
 To launch the main Program run this :
+
 --
+
 exec(open("launcher-2-neatmunk.py").read())
+
 --
 
 
