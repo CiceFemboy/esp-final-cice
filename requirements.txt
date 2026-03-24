@@ -1,5 +1,5 @@
 neat-python
-neat
 joblib
 pygame
 pymunk
+neat
