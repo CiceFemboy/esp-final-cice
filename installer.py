@@ -13,6 +13,6 @@ subprocess.run([sys.executable, "-m", "pip", "install","-r", DEFAULT_PATH + "\\r
 import shutil
 print(f"[DEBUG] installing demomunk")
 os.mkdir(DEFAULT_PATH + "\\python-3.13.12-embed-amd64\\Lib\\site-packages\\demomunk")
-shutil.copyfile(DEFAULT_PATH + "\\ESP-scripts\\demomunk.py", DEFAULT_PATH + "\\python-3.13.12-embed-amd64\\Lib\\site-packages\\demomunk\\demomunk.py")
+shutil.copyfile(DEFAULT_PATH + "\\ESP-scripts\\demomunk.py", DEFAULT_PATH + "\\python-3.13.12-embed-amd64\\Lib\\site-packages\\demomunk\\Game.py")
 with open(DEFAULT_PATH + "\\python-3.13.12-embed-amd64\\Lib\\site-packages\\demomunk\\__init__.py", "w") as file:
-	file.write('__all__ = ["demomunk"]')
+	file.write('__all__ = ["Game"]')
