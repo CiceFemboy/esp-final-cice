@@ -101,7 +101,7 @@ To launch the main Program run this :
 
 --
 
-exec(open("launcher-2-neatmunk.py").read())
+exec(open("launcher.py").read())
 
 --
 
