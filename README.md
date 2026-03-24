@@ -87,15 +87,20 @@ To run the python scripts from the project you should use the embedded python ap
 3.  Click and Run Python.exe
 4.  Change Working Directory from the embedded python folder ( "python-3.x.x-embed-amd64" ) to the Working Folder
 -  use this command :
+
 --
 exec(open("change-dir.py").read())
 --
+
 5. Run the project Scripts
 - use this command and modify the command according to which script you need or want to run
- for example :
+ 
+To launch the main Program run this :
 --
-exec(open("demomunk.py").read())
+exec(open("launcher-2-neatmunk.py").read())
 --
+
+
 
 ---
 
@@ -116,6 +121,8 @@ insert the following string :
 Lib
 
 Lib\site-packages
+
+Include\pygame
 
 --
 
