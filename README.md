@@ -110,7 +110,7 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 
 the "exec(open(os.getcwd() + "\\change-dir.py").read())" command is important as it changes the work directory inside the python interpretor to the work folder's directory and use it as the interpreter current work directory (where scripts on the said folder can be recognized by the interpreter and executed) outside of the "python-3.x.x-embed-amd64" folder. the work folder's directory is the project's default directory and changing the interpreter's work directory to the work folder's directory ensure proper reading of the project's scripts and installation scripts.
 
-This Installation process do (how installer.py works)
+What does the Installation process do (how installer.py works)
 1. Install pip (python module tha download and install python modules from the PyPi online package library) via the "get-pip.py" script (free online script that download and install the pip module and package from the internet)
 2. Install requirements via pip
 3. Install the project's code located in ESP-scripts as python modules
