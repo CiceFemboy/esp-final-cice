@@ -74,6 +74,7 @@ the file named "projet ESP install folder.zip" contains a premade installation f
 --
 
 import os
+
 exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
 
 --
@@ -86,6 +87,7 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 --
 
 import os
+
 exec(open(os.getcwd() + "\\installer.py").read())
 
 --
@@ -95,6 +97,7 @@ exec(open(os.getcwd() + "\\installer.py").read())
 --
 
 import os
+
 exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
 
 --
@@ -174,7 +177,9 @@ insert the following string :
 --
 
 Lib
+
 Lib\site-packages
+
 Include\pygame
 
 --
