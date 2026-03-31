@@ -66,9 +66,9 @@ the file named "projet ESP install folder.zip" contains a premade installation f
 
 5. **Install the project**
 
-**if you are on a school pc (restricted user permissions)**
+**On school PCs (restricted user permissions)**
 
-  - run the Python shortcut. 
+  - Run the Python shortcut. 
   - Run the following command, it will run the installation scripts :
 
 --
@@ -79,7 +79,7 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 
 --
 
-**if you are on your pc**
+**On your own PC**
 
   - run the Python shortcut.
   - Run the following command, it will run the installation scripts :
@@ -92,7 +92,7 @@ exec(open(os.getcwd() + "\\installer.py").read())
 
 --
 
-**if the shortcut python interpreter doesnt work properly, close the prompt and go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then run the following command :**
+**If the shortcut python interpreter doesnt work properly, close the prompt and go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then run the following command :**
 
 --
 
@@ -122,7 +122,7 @@ Now your project should be Installed
 To run the python scripts from the project **you should use the embedded python application integrated in the project's installation**. you may use other means but this guide will not help you, use local os python installation at your own risk.
 
 
-**on School PCs (limited permissions)**
+**On School PCs (limited permissions)**
 
 Only run AFTER the project is installed
 
@@ -135,7 +135,7 @@ exec(open("change-dir.py").read()), exec(open("launcher.py").read())
 
 --
 
-**on your PC**
+**on your own PC**
 
 **Only run AFTER the project is installed (school pc) **
 
@@ -148,7 +148,7 @@ exec(open("launcher.py").read())
 
 --
 
-**on your PC if shortcut doesnt work properly**
+**if the shortcut python interpreter doesnt work properly**
 
 Only run AFTER the project is installed
 
