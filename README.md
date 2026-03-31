@@ -189,7 +189,7 @@ Include\pygame
 
 --
 
-2. ** 'Script.py' does not exists**
+2. **'Script.py' does not exists**
 
 you are not in the correct working directory, you need to change the working directory to the correct one. 
 
@@ -204,7 +204,7 @@ exec(open("change-dir.py").read())
 after that it should have displayed : [DEBUG] current directory : ~[content]~
 you should be in the working directory in the working folder outside of the python embedded virtual environment directory.
 
-3. ** 'Module' does not exists**
+3. **'Module' does not exists**
 
 close the interpreter's prompt then re-execute the python interpreter
 
