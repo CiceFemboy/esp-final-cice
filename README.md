@@ -107,6 +107,7 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 --
 
 **Important**
+
 the "exec(open(os.getcwd() + "\\change-dir.py").read())" command is important as it changes the work directory inside the python interpretor to the work folder's directory and use it as the interpreter current work directory (where scripts on the said folder can be recognized by the interpreter and executed) outside of the "python-3.x.x-embed-amd64" folder. the work folder's directory is the project's default directory and changing the interpreter's work directory to the work folder's directory ensure proper reading of the project's scripts and installation scripts.
 
 This Installation process do (how installer.py works)
@@ -120,7 +121,7 @@ Now your project should be Installed
 
 **important**
 
->> to update the project's code re-do the installation process at step 5, it will un-install then re-install the project's code as python modules
+> to update the project's code re-do the installation process at step 5, it will un-install then re-install the project's code as python modules
 
 
 To run the python scripts from the project **you should use the embedded python application integrated in the project's installation**. you may use other means but this guide will not help you, use local os python installation at your own risk.
