@@ -25,9 +25,9 @@ to do :
 
 ---
 
-# **Installation and Running Guide - Cice **
+# **Installation and Running Guide - Cice**
 
-**Working Systems :**
+**Working Systems**
 
 - WINDOWS 10/11 x86_64 64bit
 
