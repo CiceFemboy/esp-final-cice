@@ -35,6 +35,11 @@ to do :
 
 **-- Installation Process --**
 
+**Important**
+
+the file named "projet ESP install folder.zip" contains a premade installation folder. you can just use it to install the program without setting up manually the environment. extract the file's content on your desktop and skip to step 5. 
+
+
 1. Create an empty working folder on the desktop or anywhere accessible
 
 ( the name of the working folder doesn't matter, use something you will remember )
@@ -59,13 +64,35 @@ to do :
 
 5. Install the project
 
-  - Go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe
+if you are on a school pc (restricted permissions on windows os)
+
+  - run the Python shortcut. 
   - Run the following command, it will run the installation scripts :
 
 --
 
 import os
+exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
 
+--
+
+if you are on a school pc (restricted permissions on windows os)
+
+  - run the Python shortcut.
+  - Run the following command, it will run the installation scripts :
+
+--
+
+import os
+exec(open(os.getcwd() + "\\installer.py").read())
+
+--
+
+if the shortcut prompt doesnt work properly go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then runt he following command
+
+--
+
+import os
 exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
 
 --
@@ -76,28 +103,29 @@ This Installation process install pip which is the most used package downloader 
 
 Now your project should be Installed
 
-**-- Running The Project --**
+# Running The Project
 
 To run the python scripts from the project you should use the embedded python application. you could use other means but this guide will not help you with those. 
 
-**Only run AFTER the project is installed**
+**on School PCs (limited permissions)**
 
-1.  Open the Working Directory
-2.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
-3.  Click and Run Python.exe
-4.  Change Working Directory from the embedded python folder ( "python-3.x.x-embed-amd64" ) to the Working Folder
--  use this command :
+Only run AFTER the project is installed
 
---
-
-exec(open("change-dir.py").read())
+2.  Click and Run the Python shortcut in the working folder.
+3.  Run the following command to launch the project :
 
 --
 
-5. Run the project Scripts
-- use this command and modify the command according to which script you need or want to run
- 
-To launch the main Program run this :
+exec(open("change-dir.py").read()), exec(open("launcher.py").read())
+
+--
+
+**on your PC**
+
+**Only run AFTER the project is installed (school pc) **
+
+2.  Click and Run the Python shortcut in the working folder.
+3.  Run the following command to launch the project :
 
 --
 
@@ -105,9 +133,19 @@ exec(open("launcher.py").read())
 
 --
 
+**on your PC if shortcut doesnt work properly**
 
+Only run AFTER the project is installed
 
----
+1.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
+2.  Click and Run Python.exe
+3.  Run the following command to launch the project :
+
+--
+
+exec(open("change-dir.py").read()), exec(open("launcher.py").read())
+
+--
 
 # Troubleshooting with the installation process
 
