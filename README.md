@@ -92,7 +92,11 @@ exec(open(os.getcwd() + "\\installer.py").read())
 
 --
 
-**If the shortcut python interpreter doesnt work properly, close the prompt and go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then run the following command :**
+**if the shortcut python interpreter doesnt work properly**
+
+1.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
+2.  Click and Run Python.exe
+3.  Run the following command to launch the project :
 
 --
 
