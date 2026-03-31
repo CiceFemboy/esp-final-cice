@@ -39,7 +39,6 @@ if os.path.isdir(DEFAULT_PATH + "\\python-3.13.12-embed-amd64\\Lib\\site-package
 	install_demomunk()
 	install_completed()
 else :
-	print(f"[DEBUG] installing demomunk")
 	install_demomunk()
 	install_completed()
 
