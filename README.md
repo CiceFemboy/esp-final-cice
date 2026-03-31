@@ -25,7 +25,7 @@ to do :
 
 ---
 
-# Installation and Running Guide - Cice
+# **Installation and Running Guide - Cice **
 
 **Working Systems :**
 
@@ -33,18 +33,18 @@ to do :
 
 ...
 
-**-- Installation Process --**
+# Installation Process
 
 **Important**
 
 the file named "projet ESP install folder.zip" contains a premade installation folder. you can just use it to install the program without setting up manually the environment. extract the file's content on your desktop and skip to step 5. 
 
 
-1. Create an empty working folder on the desktop or anywhere accessible
+1. **Create an empty working folder on the desktop or anywhere accessible**
 
 ( the name of the working folder doesn't matter, use something you will remember )
 
-2. Install the python virtual environment
+2. **Install the python virtual environment**
 
   - Download the embeddded python zip from the repository, (we took an online version)
   - Place the python zip inside the working folder
@@ -52,19 +52,21 @@ the file named "projet ESP install folder.zip" contains a premade installation f
 
 ( on windows use "Extract All" after right clicking on the compressed file, it should uncompress/unzip the file then create a folder with the same name and place the content inside automatically)
 
-3. Download Install the installer scripts
+3. **Download the installer scripts**
 
-  - Download "change-dir.py" and "installer.py" and "get-pip.py" from the repository.
+  - Download "change-dir.py" and "installer.py" and "get-pip.py" from the github repository.
   - Place "installer.py" and "get-pip.py" directly in the working folder.
   - Place "Change-dir.py" inside the embedded python folder ( "python-3.x.x-embed-amd64" )
 
-4. Download the Projects Files and Scripts.
+4. **Download the Projects Files and Scripts.**
 
-  - Download "requirements.txt", "demomunk.py" and "neat_munk.py" and place the files in the working folder.
+  - Download "requirements.txt", the files in the ESP-scripts github folder, the files in creatures folder from the github repository and place them in the working folder.
+  - Make a folder named exactly "ESP-scripts" then place the files downloaded from the github folder with the same name inside the newly created folder.
+  - Make a folder named exactly "creatures" then place the files downloaded from the github folder with the same name inside the newly created folder.
 
-5. Install the project
+5. **Install the project**
 
-if you are on a school pc (restricted permissions on windows os)
+**if you are on a school pc (restricted user permissions)**
 
   - run the Python shortcut. 
   - Run the following command, it will run the installation scripts :
@@ -76,7 +78,7 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 
 --
 
-if you are on a school pc (restricted permissions on windows os)
+**if you are on your pc**
 
   - run the Python shortcut.
   - Run the following command, it will run the installation scripts :
@@ -88,7 +90,7 @@ exec(open(os.getcwd() + "\\installer.py").read())
 
 --
 
-if the shortcut prompt doesnt work properly go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then runt he following command
+**if the shortcut python interpreter doesnt work properly, close the prompt and go in the embedded python folder ( "python-3.x.x-embed-amd64" ) then run the Python application named python.exe, then run the following command :**
 
 --
 
@@ -162,9 +164,7 @@ insert the following string :
 --
 
 Lib
-
 Lib\site-packages
-
 Include\pygame
 
 --
@@ -173,10 +173,16 @@ Include\pygame
 
 you are not in the correct working directory, you need to change the working directory to the correct one. 
 
-run this command >>
+run this command to change working directory :
+
+--
+
 exec(open("change-dir.py").read())
 
-only the change-dirpy script is located in the embedded python folder ( "python-3.x.x-embed-amd64" ), all other scripts will not be there, thus why you cannot run any of the scripts because they are not located there.
+--
+
+after that it should have displayed : [DEBUG] current directory : ~[content]~
+you should be in the working directory in the working folder outside of the python embedded virtual environment directory.
 
 ---
 
