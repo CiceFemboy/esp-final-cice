@@ -2,4 +2,3 @@ neat-python
 joblib
 pygame
 pymunk
-neat
