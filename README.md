@@ -40,9 +40,9 @@ to do :
 the file named "projet ESP install folder.zip" contains a premade installation folder. you can just use it to install the program without setting up manually the environment. extract the file's content on your desktop and skip to step 5. 
 
 
-1. **Create an empty working folder on the desktop or anywhere accessible**
+1. **Create an empty work folder on the desktop or anywhere accessible**
 
-( the name of the working folder doesn't matter, use something you will remember )
+( the name of the work folder doesn't matter, use something you will remember )
 
 2. **Install the python virtual environment**
 
@@ -55,12 +55,12 @@ the file named "projet ESP install folder.zip" contains a premade installation f
 3. **Download the installer scripts**
 
   - Download "change-dir.py" and "installer.py" and "get-pip.py" from the github repository.
-  - Place "installer.py" and "get-pip.py" directly in the working folder.
+  - Place "installer.py" and "get-pip.py" directly in the work folder.
   - Place "Change-dir.py" inside the embedded python folder ( "python-3.x.x-embed-amd64" )
 
 4. **Download the Projects Files and Scripts.**
 
-  - Download "requirements.txt", the files in the ESP-scripts github folder, the files in creatures folder from the github repository and place them in the working folder.
+  - Download "requirements.txt", the files in the ESP-scripts github folder, the files in creatures folder from the github repository and place them in the work folder.
   - Make a folder named exactly "ESP-scripts" then place the files downloaded from the github folder with the same name inside the newly created folder.
   - Make a folder named exactly "creatures" then place the files downloaded from the github folder with the same name inside the newly created folder.
 
@@ -99,15 +99,25 @@ exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\i
 
 --
 
-This important as it changes at first the working directory inside the python interpretor to the project default directory outside of the "python-3.x.x-embed-amd64" folder and reads the installation scripts.
+**Important**
+the "exec(open(os.getcwd() + "\\change-dir.py").read())" command is important as it changes the work directory inside the python interpretor to the work folder's directory and use it as the interpreter current work directory (where scripts on the said folder can be recognized by the interpreter and executed) outside of the "python-3.x.x-embed-amd64" folder. the work folder's directory is the project's default directory and changing the interpreter's work directory to the work folder's directory ensure proper reading of the project's scripts and installation scripts.
 
-This Installation process install pip which is the most used package downloader and installer for  python and link the required libraries so the virtual embedded python environment can use pip.
+This Installation process do (how installer.py works)
+1. Install pip (python module tha download and install python modules from the PyPi online package library) via the "get-pip.py" script (free online script that download and install the pip module and package from the internet)
+2. Install requirements via pip
+3. Install the project's code located in ESP-scripts as python modules
 
 Now your project should be Installed
 
 # Running The Project
 
-To run the python scripts from the project you should use the embedded python application. you could use other means but this guide will not help you with those. 
+**important**
+
+>> to update the project's code re-do the installation process at step 5, it will un-install then re-install the project's code as python modules
+
+
+To run the python scripts from the project **you should use the embedded python application integrated in the project's installation**. you may use other means but this guide will not help you, use local os python installation at your own risk.
+
 
 **on School PCs (limited permissions)**
 
@@ -151,7 +161,7 @@ exec(open("change-dir.py").read()), exec(open("launcher.py").read())
 
 # Troubleshooting with the installation process
 
-1. Pip does not install properly and is not usable
+1. **Pip does not install properly and is not usable**
 
 This issue stems from pip package module being successfully installed but the module is not recognized by the python intepreter. this is caused by a missing library and package site path link accessible to the python intepreter. without those paths, it cannot access and import the module.
 
@@ -169,7 +179,7 @@ Include\pygame
 
 --
 
-2. Scripts does not exists
+2. ** 'Script.py' does not exists**
 
 you are not in the correct working directory, you need to change the working directory to the correct one. 
 
@@ -183,6 +193,10 @@ exec(open("change-dir.py").read())
 
 after that it should have displayed : [DEBUG] current directory : ~[content]~
 you should be in the working directory in the working folder outside of the python embedded virtual environment directory.
+
+3. ** 'Module' does not exists**
+
+close the interpreter's prompt then re-execute the python interpreter
 
 ---
 
