@@ -2,3 +2,4 @@ neat-python
 joblib
 pygame
 pymunk
+PyQt6
