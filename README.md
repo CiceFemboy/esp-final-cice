@@ -5,7 +5,7 @@ Done:
 - Added neat functionality
 - code rewritten so that creatures are written with json files (examples in creatures folder)
 - installer script
-- 
+- create a bat system executable to automatically set up the python environment rather than manually installing. (coupled with a install script and launcher)
 -----------------------------------
 
 to do :  
@@ -21,7 +21,6 @@ to do :
 
 --
 
-- create a bat system executable to automatically set up the python environment rather than manually installing.
 
 ---
 
