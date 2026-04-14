@@ -4,8 +4,6 @@ import sys
 import importlib
 from neat_munk.main import run_neat
 
-importlib.reload(pygame)
-
 BG       = (15,  14,  20)
 ACCENT   = (80, 220, 140)
 ACCENT2  = (40, 160, 100)
@@ -13,8 +11,7 @@ DIM      = (55,  53,  70)
 WHITE    = (230, 230, 230)
 DARK     = (10,  10,  14)
 
-W = 960
-H = 600
+W, H = 960, 600
 
 FPS  = 60
 
@@ -78,7 +75,8 @@ def main():
                 pygame.quit(); sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if btn_start.clicked(mx, my):
-                    from neat_munk import run_neat
+                    import neat_munk
+                    from neat_munk.main import run_neat
                     run_neat()
                     return
                 if btn_config.clicked(mx, my):

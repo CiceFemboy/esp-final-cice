@@ -6,7 +6,7 @@ import json
 import threading
 from multiprocessing import cpu_count
 
-from demomunk import Game
+from demomunk.main import Game
 
 def build_neat_config(num_inputs, num_outputs): # wow im so good at coding
     config_text = f"""
