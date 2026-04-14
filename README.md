@@ -5,7 +5,8 @@ Done:
 - Added neat functionality
 - code rewritten so that creatures are written with json files (examples in creatures folder)
 - installer script
-- create a bat system executable to automatically set up the python environment rather than manually installing. (coupled with a install script and launcher)
+- launcher script
+- bat system executable to automatically set up the python environment and launch the program. (coupled with a install script and launcher script)
 -----------------------------------
 
 to do :  
@@ -24,7 +25,7 @@ to do :
 
 ---
 
-# **Installation and Running Guide - Cice**
+# **Installation Guide - Cice**
 
 **Working Systems**
 
@@ -34,135 +35,69 @@ to do :
 
 # Installation Process
 
-**Important**
+1. **Download File named "projet ESP install folder.zip"
 
-the file named "projet ESP install folder.zip" contains a premade installation folder. you can just use it to install the program without setting up manually the environment. extract the file's content on your desktop and skip to step 5. 
+on windows use "Extract All" after right clicking on the compressed file, it should uncompress/unzip the zip file with its content as a folder automatically.
 
+2. **Place the Project's Folder on your Desktop.
 
-1. **Create an empty work folder on the desktop or anywhere accessible**
+3. **Open the Folder named "working folder"
 
-( the name of the work folder doesn't matter, use something you will remember )
+4. **Double Click and Execute 'run.bat' to Launch the project
 
-2. **Install the python virtual environment**
+**Important
+on the first run, it will install the project's code, its requirements and install the python environment.
+refer to the installation process later on the README to understand what exactly happens
 
-  - Download the embeddded python zip from the repository, (we took an online version)
-  - Place the python zip inside the working folder
-  - Unzip the compressed file and extract in a folder 
+5. **How the Installation Works**
 
-( on windows use "Extract All" after right clicking on the compressed file, it should uncompress/unzip the file then create a folder with the same name and place the content inside automatically)
+What does the Launch and Installation process do?
+(how installer.py, launcher.py and script-installer.py works)
 
-3. **Download the installer scripts**
+**Launch Process (launcher.py)
 
-  - Download "change-dir.py" and "installer.py" and "get-pip.py" from the github repository.
-  - Place "installer.py" and "get-pip.py" directly in the work folder.
-  - Place "Change-dir.py" inside the embedded python folder ( "python-3.x.x-embed-amd64" )
+1. **run.bat executes and opens launcher.py script using the python application embedded in the project.
 
-4. **Download the Projects Files and Scripts.**
+2. **launcher.py verifies if lib folder exists (if it exists itmeans requirements are downloaded)
 
-  - Download "requirements.txt", the files in the ESP-scripts github folder, the files in creatures folder from the github repository and place them in the work folder.
-  - Make a folder named exactly "ESP-scripts" then place the files downloaded from the github folder with the same name inside the newly created folder.
-  - Make a folder named exactly "creatures" then place the files downloaded from the github folder with the same name inside the newly created folder.
+if the 'Lib' folder do not exist ; launcher.py executes installer.py and the installation process begins.
 
-5. **Install the project**
+if the 'Lib' folder exists ; launcher.py do not proceed with the installation process and calls the script-installer.py script to refresh the project's code as python modules.
 
-**On school PCs (restricted user permissions)**
+**installation Process (installer.py)
 
-  - Run the Python shortcut. 
-  - Run the following command, it will run the installation scripts :
+1. Install the Environment Variables on the python313._pth file to enable python to recognize pip as a python module.
 
---
+2. Install pip (python module tha download and install python modules from the PyPi online package library) via the "get-pip.py" script (free online script that download and install the pip module and package from the internet)
 
-import os
+3. Install requirements via pip
 
-exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
+4. Install the project's code located in ESP-scripts as python modules (calls script-installer.py)
 
---
+Now the project should be Installed
 
-**On your own PC**
+**Script Refresh Process (script-installer.py)
 
-  - run the Python shortcut.
-  - Run the following command, it will run the installation scripts :
+1. detects if the scripts are installed as Python modules
 
---
+if demomunk exists as a pythonmodule ; it deletes the existing modules then reinstall the scripts' code on ES-scripts as python modules.
 
-import os
-
-exec(open(os.getcwd() + "\\installer.py").read())
-
---
-
-**if the shortcut python interpreter doesnt work properly**
-
-1.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
-2.  Click and Run Python.exe
-3.  Run the following command to launch the project :
-
---
-
-import os
-
-exec(open(os.getcwd() + "\\change-dir.py").read()), exec(open(os.getcwd() + "\\installer.py").read())
-
---
-
-**Important**
-
-the "exec(open(os.getcwd() + "\\change-dir.py").read())" command is important as it changes the work directory inside the python interpretor to the work folder's directory and use it as the interpreter current work directory (where scripts on the said folder can be recognized by the interpreter and executed) outside of the "python-3.x.x-embed-amd64" folder. the work folder's directory is the project's default directory and changing the interpreter's work directory to the work folder's directory ensure proper reading of the project's scripts and installation scripts.
-
-What does the Installation process do (how installer.py works)
-1. Install pip (python module tha download and install python modules from the PyPi online package library) via the "get-pip.py" script (free online script that download and install the pip module and package from the internet)
-2. Install requirements via pip
-3. Install the project's code located in ESP-scripts as python modules
-
-Now your project should be Installed
+if demomunk does not exist as a python module ; install the scripts' code on ES-scripts as python modules.
 
 # Running The Project
 
-**important**
+To run the project just execute the file named "run.bat", the project should launch normally.
 
-> to update the project's code re-do the installation process at step 5, it will un-install then re-install the project's code as python modules
+**Manual Running**
 
+If run.bat doesnt work properly
 
-To run the python scripts from the project **you should use the embedded python application integrated in the project's installation**. you may use other means but this guide will not help you, use local os python installation at your own risk.
-
-
-**On School PCs (limited permissions)**
-
-Only run AFTER the project is installed
-
-2.  Click and Run the Python shortcut in the working folder.
+2.  Click and Run the Python application named Python.exe located in the embedded python application on the project.
 3.  Run the following command to launch the project :
 
 --
 
-exec(open("change-dir.py").read()), exec(open("launcher.py").read())
-
---
-
-**on your own PC**
-
-**Only run AFTER the project is installed (school pc) **
-
-2.  Click and Run the Python shortcut in the working folder.
-3.  Run the following command to launch the project :
-
---
-
-exec(open("launcher.py").read())
-
---
-
-**if the shortcut python interpreter doesnt work properly**
-
-Only run AFTER the project is installed
-
-1.  Open the the embedded python folder ( "python-3.x.x-embed-amd64" )
-2.  Click and Run Python.exe
-3.  Run the following command to launch the project :
-
---
-
-exec(open("change-dir.py").read()), exec(open("launcher.py").read())
+exec(open("change-dir.py").read()), exec(open("ESP-scripts\\launcher.py").read())
 
 --
 
@@ -185,6 +120,8 @@ Lib
 Lib\site-packages
 
 Include\pygame
+
+Scripts
 
 --
 
