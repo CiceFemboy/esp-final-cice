@@ -35,26 +35,26 @@ to do :
 
 # Installation Process
 
-1. **Download File named "projet ESP install folder.zip"
+1. **Download File named "projet ESP install folder.zip"**
 
 on windows use "Extract All" after right clicking on the compressed file, it should uncompress/unzip the zip file with its content as a folder automatically.
 
-2. **Place the Project's Folder on your Desktop.
+2. **Place the Project's Folder on your Desktop**
 
-3. **Open the Folder named "working folder"
+3. **Open the Folder named "working folder"**
 
-4. **Double Click and Execute 'run.bat' to Launch the project
+4. **Double Click and Execute 'run.bat' to Launch the project**
 
-**Important
-on the first run, it will install the project's code, its requirements and install the python environment.
+**Important**
+on the first run, it will install the project's code, the project's requirements and install the python environment.
 refer to the installation process later on the README to understand what exactly happens
 
-5. **How the Installation Works**
+# How the Installation Works
 
 What does the Launch and Installation process do?
 (how installer.py, launcher.py and script-installer.py works)
 
-**Launch Process (launcher.py)
+**Launch Process (launcher.py)**
 
 1. **run.bat executes and opens launcher.py script using the python application embedded in the project.
 
@@ -64,7 +64,7 @@ if the 'Lib' folder do not exist ; launcher.py executes installer.py and the ins
 
 if the 'Lib' folder exists ; launcher.py do not proceed with the installation process and calls the script-installer.py script to refresh the project's code as python modules.
 
-**installation Process (installer.py)
+**installation Process (installer.py)**
 
 1. Install the Environment Variables on the python313._pth file to enable python to recognize pip as a python module.
 
