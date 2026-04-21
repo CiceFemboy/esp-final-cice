@@ -3,3 +3,4 @@ joblib
 pygame
 pymunk
 PyQt6
+keyboard
