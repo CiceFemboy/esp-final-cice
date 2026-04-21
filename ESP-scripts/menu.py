@@ -80,7 +80,7 @@ def main():
                     run_neat()
                     return
                 if btn_config.clicked(mx, my):
-                    pass  # TODO
+                    exec(open("window.py").read())
                 if btn_visual.clicked(mx, my):
                     pass  # TODO
 
