@@ -80,7 +80,7 @@ def main():
                     run_neat()
                     return
                 if btn_config.clicked(mx, my):
-                    exec(open("window.py").read())
+                    exec(open("ESP-scripts\\config.py").read())
                 if btn_visual.clicked(mx, my):
                     pass  # TODO
 

@@ -30,7 +30,7 @@ Update.display_settings(mode)
 
 while process :
 	
-	dt = clock.tick(FPS) / 1000.0
+	clock  = pygame.time.Clock()
 	mx, my = pygame.mouse.get_pos()
 
 	time.sleep(0.1)
