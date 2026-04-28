@@ -2,6 +2,7 @@
 import pygame
 import sys
 import importlib
+import subprocess
 from neat_munk.main import run_neat
 
 BG       = (15,  14,  20)
@@ -61,8 +62,8 @@ def main():
 
     btn_start  = Button((cx - 120, cy - 20,  240, 64), "START", primary=True)
     btn_config = Button((cx - 250, cy + 70,  220, 48), "CONFIG", primary=False)
-    btn_visual = Button((cx +  30, cy + 70,  220, 48), "VISUALISATION", primary=False)
-    buttons = [btn_start, btn_config, btn_visual]
+    btn_editor = Button((cx +  30, cy + 70,  220, 48), "Creature Editor", primary=False)
+    buttons = [btn_start, btn_config, btn_editor]
 
     while True:
         dt = clock.tick(FPS) / 1000.0
@@ -81,7 +82,9 @@ def main():
                     return
                 if btn_config.clicked(mx, my):
                     exec(open("ESP-scripts\\config.py").read())
-                if btn_visual.clicked(mx, my):
+                if btn_editor.clicked(mx, my):
+                    exec(open("ESP-scripts\\editor.py").read())
+
                     pass  # TODO
 
         for b in buttons:
