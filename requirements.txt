@@ -2,5 +2,5 @@ neat-python
 joblib
 pygame
 pymunk
-PyQt6
 keyboard
+mouse
