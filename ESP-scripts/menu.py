@@ -1,9 +1,8 @@
-
 import pygame
 import sys
-import importlib
-import subprocess
-from neat_munk.main import run_neat
+import tkinter as tk
+from tkinter import filedialog
+import json
 
 BG       = (15,  14,  20)
 ACCENT   = (80, 220, 140)
@@ -13,8 +12,8 @@ WHITE    = (230, 230, 230)
 DARK     = (10,  10,  14)
 
 W, H = 960, 600
-
 FPS  = 60
+
 
 class Button:
     def __init__(self, rect, label, primary=False):
@@ -54,16 +53,15 @@ def main():
     pygame.display.set_caption("Evolution Simulator")
     clock  = pygame.time.Clock()
 
-    font_title  = pygame.font.SysFont("Courier New", 64, bold=True)
+    font_title = pygame.font.SysFont("Courier New", 64, bold=True)
     font_btn_lg = pygame.font.SysFont("Courier New", 30, bold=True)
-    font_btn_sm = pygame.font.SysFont("Courier New", 20, bold=True)
+    font_btn_md = pygame.font.SysFont("Courier New", 22, bold=True)
+    font_credit = pygame.font.SysFont("Courier New", 14)
 
     cx, cy = W // 2, H // 2
 
     btn_start  = Button((cx - 120, cy - 20,  240, 64), "START", primary=True)
-    btn_config = Button((cx - 250, cy + 70,  220, 48), "CONFIG", primary=False)
-    btn_editor = Button((cx +  30, cy + 70,  220, 48), "Creature Editor", primary=False)
-    buttons = [btn_start, btn_config, btn_editor]
+    btn_import = Button((cx - 120, cy + 60, 240, 44), "IMPORT STATE")
 
     while True:
         dt = clock.tick(FPS) / 1000.0
@@ -76,31 +74,52 @@ def main():
                 pygame.quit(); sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if btn_start.clicked(mx, my):
-                    import neat_munk
-                    from neat_munk.main import run_neat
-                    run_neat()
-                    return
-                if btn_config.clicked(mx, my):
-                    exec(open("ESP-scripts\\config.py").read())
-                if btn_editor.clicked(mx, my):
-                    exec(open("ESP-scripts\\editor.py").read())
+                    root = tk.Tk()
+                    root.withdraw()
+                    path = filedialog.askopenfilename(
+                        initialdir="creatures",
+                        filetypes=[("JSON files","*.json")]
+                    )
+                    root.destroy()
+                    if path:
+                        with open(path) as f:
+                            creature_data = json.load(f)
+                        from neat_munk.main import run_neat
+                        run_neat(creature_data=creature_data)
+                        return
+                if btn_import.clicked(mx, my):
+                    root = tk.Tk()
+                    root.withdraw()   # hide the tkinter window
+                    path = filedialog.askopenfilename(
+                        initialdir="states",
+                        filetypes=[("Pickle files", "*.pkl")]
+                    )
+                    root.destroy()
+                    if path:
+                        from neat_munk import run_neat
+                        run_neat(import_path=path)
+                        return
 
-                    pass  # TODO
-
-        for b in buttons:
-            b.update(mx, my, dt)
+            btn_import.update(mx, my, dt)
+            btn_start.update(mx, my, dt)
 
         screen.fill(BG)
 
-        title = font_title.render("EVOSIM", True, WHITE)
+        title = font_title.render("ÉVOSIM", True, WHITE)
         screen.blit(title, title.get_rect(center=(cx, cy - 110)))
 
         pygame.draw.line(screen, ACCENT,
                          (cx - title.get_width()//2, cy - 78),
                          (cx + title.get_width()//2, cy - 78), 2)
 
-        for b in buttons:
-            b.draw(screen, font_btn_lg if b.primary else font_btn_sm)
+        btn_start.draw(screen, font_btn_lg)
+        btn_import.draw(screen, font_btn_md)
+
+        authors = ["Thomas Prévost-Langevin", "Christopher Plantevin"]
+
+        for i, a in enumerate(authors):
+            ct = font_credit.render(a, True, ACCENT2)
+            screen.blit(ct, ct.get_rect(topleft=(5,0 + i * 16)))
 
         pygame.display.flip()
 
