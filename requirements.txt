@@ -4,3 +4,4 @@ pygame
 pymunk
 keyboard
 mouse
+setuptools
