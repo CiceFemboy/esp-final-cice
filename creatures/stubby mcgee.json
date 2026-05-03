@@ -1,0 +1,37 @@
+{
+    "bodies": [
+        {
+            "name": "torso1",
+            "type": "torso",
+            "size": [120,30],
+            "position": [0,0]
+        },
+        {
+            "name": "leg1",
+            "type": "leg",
+            "size": [60,30],
+            "position": [90,0]
+        },
+        {
+           "name": "leg2",
+            "type": "leg",
+            "size": [60,30],
+            "position": [-90,0] 
+        }
+    ],
+
+    "joints": [
+        {
+            "body_a": "torso1",
+            "body_b": "leg1",
+            "anchor": [60,0],
+            "actuated": true
+        },
+        {
+            "body_a": "torso1",
+            "body_b": "leg2",
+            "anchor": [-60,0],
+            "actuated": true
+        }
+    ]
+}

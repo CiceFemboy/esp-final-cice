@@ -1,0 +1,85 @@
+{
+    "bodies": [
+        {
+            "name": "torso1",
+            "type": "torso",
+            "size": [240,30],
+            "position": [0,0]
+        },
+        {
+            "name": "leg1",
+            "type": "leg",
+            "size": [60,30],
+            "position": [150,0]
+        },
+        {
+           "name": "leg2",
+            "type": "leg",
+            "size": [60,30],
+            "position": [-150,0] 
+        },
+        {
+            "name": "leg12",
+            "type": "leg",
+            "size": [60,30],
+            "position": [210,0]
+        },
+        {
+           "name": "leg22",
+            "type": "leg",
+            "size": [60,30],
+            "position": [-210,0] 
+        },
+        {
+            "name": "leg13",
+            "type": "leg",
+            "size": [60,30],
+            "position": [270,0]
+        },
+        {
+           "name": "leg23",
+            "type": "leg",
+            "size": [60,30],
+            "position": [-270,0] 
+        }
+    ],
+
+    "joints": [
+        {
+            "body_a": "torso1",
+            "body_b": "leg1",
+            "anchor": [120,0],
+            "actuated": true
+        },
+        {
+            "body_a": "torso1",
+            "body_b": "leg2",
+            "anchor": [-120,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg1",
+            "body_b": "leg12",
+            "anchor": [180,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg2",
+            "body_b": "leg22",
+            "anchor": [-180,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg12",
+            "body_b": "leg13",
+            "anchor": [240,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg22",
+            "body_b": "leg23",
+            "anchor": [-240,0],
+            "actuated": true
+        }
+    ]
+}

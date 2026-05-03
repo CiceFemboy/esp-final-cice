@@ -1,0 +1,61 @@
+{
+    "bodies": [
+        {
+            "name": "torso1",
+            "type": "leg",
+            "size": [90,30],
+            "position": [0,0]
+        },
+        {
+            "name": "leg1",
+            "type": "leg",
+            "size": [60,30],
+            "position": [75,0]
+        },
+        {
+           "name": "leg2",
+            "type": "leg",
+            "size": [60,30],
+            "position": [-75,0] 
+        },
+        {
+            "name": "foot1",
+            "type": "leg",
+            "size": [10,30],
+            "position": [110,0]
+        },
+        {
+            "name": "foot2",
+            "type": "leg",
+            "size": [10,30],
+            "position": [-110,0]
+        }
+    ],
+
+    "joints": [
+        {
+            "body_a": "torso1",
+            "body_b": "leg1",
+            "anchor": [45,0],
+            "actuated": true
+        },
+        {
+            "body_a": "torso1",
+            "body_b": "leg2",
+            "anchor": [-45,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg1",
+            "body_b": "foot1",
+            "anchor": [105,0],
+            "actuated": true
+        },
+        {
+            "body_a": "leg2",
+            "body_b": "foot2",
+            "anchor": [-105,0],
+            "actuated": true
+        }   
+    ]
+}
