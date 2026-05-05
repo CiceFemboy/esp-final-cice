@@ -176,8 +176,8 @@ class Creature:
 class Game:
     def __init__(self, render=True):
         self.render = render
-        self.width = 1000
-        self.height = 600
+        self.width = 1280
+        self.height = 720
         self.creatures = []
         self.creature_info = []
         self.species_names = {}

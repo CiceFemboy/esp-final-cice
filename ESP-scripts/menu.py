@@ -14,7 +14,6 @@ DARK     = (10,  10,  14)
 W, H = 960, 600
 FPS  = 60
 
-
 class Button:
     def __init__(self, rect, label, primary=False):
         self.rect    = pygame.Rect(rect)
@@ -52,6 +51,7 @@ def main():
     screen = pygame.display.set_mode((W, H), pygame.RESIZABLE)
     pygame.display.set_caption("Evolution Simulator")
     clock  = pygame.time.Clock()
+    process = True
 
     font_title = pygame.font.SysFont("Courier New", 64, bold=True)
     font_btn_lg = pygame.font.SysFont("Courier New", 30, bold=True)
@@ -62,8 +62,9 @@ def main():
 
     btn_start  = Button((cx - 120, cy - 20,  240, 64), "START", primary=True)
     btn_import = Button((cx - 120, cy + 60, 240, 44), "IMPORT STATE")
+    btn_editor = Button((cx - 120, cy + 120, 240, 44), "CREATURE EDITOR")
 
-    while True:
+    while process:
         dt = clock.tick(FPS) / 1000.0
         mx, my = pygame.mouse.get_pos()
 
@@ -96,12 +97,16 @@ def main():
                     )
                     root.destroy()
                     if path:
-                        from neat_munk import run_neat
+                        from neat_munk.main import run_neat
                         run_neat(import_path=path)
                         return
+                if btn_editor.clicked(mx, my) :
+                    exec(open("ESP-scripts\\editor.py").read())
+                    process = False
 
             btn_import.update(mx, my, dt)
             btn_start.update(mx, my, dt)
+            btn_editor.update(mx, my, dt)
 
         screen.fill(BG)
 
@@ -114,6 +119,7 @@ def main():
 
         btn_start.draw(screen, font_btn_lg)
         btn_import.draw(screen, font_btn_md)
+        btn_editor.draw(screen, font_btn_md)
 
         authors = ["Thomas Prévost-Langevin", "Christopher Plantevin"]
 

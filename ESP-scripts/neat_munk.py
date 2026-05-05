@@ -14,7 +14,7 @@ def build_neat_config(num_inputs, num_outputs):  # wow im so good at coding
 [NEAT]
 fitness_criterion       = max
 fitness_threshold       = 500
-pop_size                = 250
+pop_size                = 500
 reset_on_extinction     = False
 no_fitness_termination  = True
 

@@ -1,14 +1,18 @@
 import keyboard
 import time
 import pygame
-import mouse
+import pynput
+from pynput.mouse import Listener
+import ctypes
+#import mouse
 
 process = True
 initialized = False
+#pressed = False
 
 WHITE = (230, 230, 230)
 
-ES_CONTINUOUS = 0x80000000
+ctypes.windll.user32.DisableProcessWindowsGhosting()
 
 class Display :
 	
@@ -23,18 +27,33 @@ class Display :
 
 Display.initialize()
 
-while process :
-
-	time.sleep(0.1)
-
-	x, y = mouse.get_position()
-		
-	if mouse.is_pressed() :
+def click(x, y, button, pressed):
+	if pressed:
 		coordinates = [x, y]
 		print(coordinates)
 
+listener = Listener(on_click=click)
+listener.start()
+
+coordinate_creature_list = []
+
+while process :
+	
+	Display.update()
+
 	if keyboard.is_pressed('esc'):
+		listener.stop()
+		coordinates_creature_list = []
 		process = False
 		print("exiting process")
 
-	Display.update()
+# (x, y) = mouse.get_position()
+#
+#if mouse.is_pressed() and not pressed:
+#		coordinates = [x, y]
+#		print(coordinates)
+#		pressed = True
+#		print("...")
+#
+#	if not mouse.is_pressed() and pressed:
+#		pressed = False
