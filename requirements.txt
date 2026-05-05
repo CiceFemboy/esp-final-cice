@@ -3,5 +3,5 @@ joblib
 pygame
 pymunk
 keyboard
-mouse
+pynput
 setuptools
