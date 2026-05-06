@@ -1,6 +1,6 @@
 neat-python
 joblib
-pygame
+pygame-ce
 pymunk
 keyboard
 pynput
