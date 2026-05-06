@@ -68,11 +68,38 @@ def main():
         dt = clock.tick(FPS) / 1000.0
         mx, my = pygame.mouse.get_pos()
 
+        screen.fill(BG)
+
+        title = font_title.render("ÉVOSIM", True, WHITE)
+        screen.blit(title, title.get_rect(center=(cx, cy - 110)))
+
+        pygame.draw.line(screen, ACCENT,
+                         (cx - title.get_width()//2, cy - 78),
+                         (cx + title.get_width()//2, cy - 78), 2)
+
+        btn_start.draw(screen, font_btn_lg)
+        btn_import.draw(screen, font_btn_md)
+        btn_editor.draw(screen, font_btn_md)
+
+        authors = ["Thomas Prévost-Langevin", "Christopher Plantevin"]
+
+        for i, a in enumerate(authors):
+            ct = font_credit.render(a, True, ACCENT2)
+            screen.blit(ct, ct.get_rect(topleft=(5,0 + i * 16)))
+
+        pygame.display.update()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                process = False
+                print("exiting process")
                 pygame.quit(); sys.exit()
+
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                process = False
+                print("exiting process")
                 pygame.quit(); sys.exit()
+
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 if btn_start.clicked(mx, my):
                     root = tk.Tk()
@@ -102,33 +129,10 @@ def main():
                         return
                 if btn_editor.clicked(mx, my) :
                     exec(open("ESP-scripts\\editor.py").read())
-                    process = False
 
             btn_import.update(mx, my, dt)
             btn_start.update(mx, my, dt)
             btn_editor.update(mx, my, dt)
-
-        screen.fill(BG)
-
-        title = font_title.render("ÉVOSIM", True, WHITE)
-        screen.blit(title, title.get_rect(center=(cx, cy - 110)))
-
-        pygame.draw.line(screen, ACCENT,
-                         (cx - title.get_width()//2, cy - 78),
-                         (cx + title.get_width()//2, cy - 78), 2)
-
-        btn_start.draw(screen, font_btn_lg)
-        btn_import.draw(screen, font_btn_md)
-        btn_editor.draw(screen, font_btn_md)
-
-        authors = ["Thomas Prévost-Langevin", "Christopher Plantevin"]
-
-        for i, a in enumerate(authors):
-            ct = font_credit.render(a, True, ACCENT2)
-            screen.blit(ct, ct.get_rect(topleft=(5,0 + i * 16)))
-
-        pygame.display.flip()
-
 
 if __name__ == "__main__":
     main()
