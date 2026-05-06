@@ -70,7 +70,7 @@ def main():
 
         screen.fill(BG)
 
-        title = font_title.render("ÉVOSIM", True, WHITE)
+        title = font_title.render("\u00C9VOSIM", True, WHITE)
         screen.blit(title, title.get_rect(center=(cx, cy - 110)))
 
         pygame.draw.line(screen, ACCENT,
@@ -81,7 +81,7 @@ def main():
         btn_import.draw(screen, font_btn_md)
         btn_editor.draw(screen, font_btn_md)
 
-        authors = ["Thomas Prévost-Langevin", "Christopher Plantevin"]
+        authors = ["Thomas Pr\u00E9vost-Langevin", "Christopher Plantevin"]
 
         for i, a in enumerate(authors):
             ct = font_credit.render(a, True, ACCENT2)

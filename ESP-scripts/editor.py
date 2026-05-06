@@ -98,17 +98,19 @@ while process :
 		not_pressed1 = True
 	if keyboard.is_pressed('enter') and not_pressed2 :
 		if 2 < len(coord_list):
+			process = False
+			listener.stop()
 			creature = { "bodies" : {}, "joints" : {} }
 			temp_list = []
 			window_length, width = pygame.display.get_window_size()
 			for i in range(0,len(coord_list) - 1):
-				body_lenght = math.sqrt( (coord_list[i + 1][0] - coord_list[i][0])**2 + (coord_list[i + 1][1] - coord_list[i][1])**2 )
+				body_length = math.ceil(math.sqrt( (coord_list[i + 1][0] - coord_list[i][0])**2 + (coord_list[i + 1][1] - coord_list[i][1])**2 ))
 				body_width = 30
-				body_pos = [ coord_list[i][0] + (coord_list[i + 1][1] - coord_list[i][0]) // 2 , coord_list[i][1] + (coord_list[i + 1][1] - coord_list[i][1]) // 2 ]
+				body_pos = [(coord_list[i + 1][0] - coord_list[i][0]) // 2 + coord_list[i][0] , (coord_list[i + 1][1] - coord_list[i][1]) // 2 + coord_list[i][1] ]
 				if bodytypes_list[i] == "torso" :
-					temp_list.append({"name":f"torso{i}","type":"torso","size":[body_lenght,body_width],"position":body_pos})
+					temp_list.append({"name":f"torso{i}","type":"torso","size":[body_length,body_width],"position":body_pos})
 				if bodytypes_list[i] == "leg" :
-					temp_list.append({"name":f"leg{i}","type":"leg","size":[body_lenght,body_width],"position":body_pos})
+					temp_list.append({"name":f"leg{i}","type":"leg","size":[body_width,body_length],"position":body_pos})
 			creature["bodies"] = temp_list
 			temp_list = []
 			for i in range(1,len(coord_list) - 1):
@@ -121,15 +123,15 @@ while process :
 			exec(open("ESP-scripts\\menu.py").read())
 	
 	if keyboard.is_pressed('1') and not_pressed3:
-		body_type_selected = "torso"
-		print("torso body type selected")
+		body_type_selected = "leg"
+		print("leg body type selected")
 		not_pressed3 = False
 	if not keyboard.is_pressed('1'):
 		not_pressed3 = True
 
 	if keyboard.is_pressed('2') and not_pressed4:
-		body_type_selected = "leg"
-		print("leg body type selected")
+		body_type_selected = "torso"
+		print("torso body type selected")
 		not_pressed4 = False
 	if not keyboard.is_pressed('2'):
 		not_pressed4 = True
@@ -140,7 +142,9 @@ while process :
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			coordinates_creature_list = []
+			coord_list = []
+			draw_coord_list = []
+			bodytypes_list = []
 			listener.stop()
 			Display.unload
 			process = False
@@ -148,12 +152,12 @@ while process :
 			pygame.quit(); sys.exit()
 	if 0 < len(coord_list) :
 		for i in range(0,len(coord_list)):
-			pygame.draw.circle(screen,color_dot,draw_coord_list[i],5)
 			if 1 < len(coord_list) :
 				if bodytypes_list[i - 1] == "leg" :
-					pygame.draw.lines(screen,color_leg,False,draw_coord_list,1)
+					pygame.draw.lines(screen,color_leg,False,draw_coord_list,2)
 				else:
-					pygame.draw.lines(screen,color_torso,False,draw_coord_list,1)
+					pygame.draw.lines(screen,color_torso,False,draw_coord_list,2)
+			pygame.draw.circle(screen,color_dot,draw_coord_list[i],5)
 # (x, y) = mouse.get_position()
 #
 #if mouse.is_pressed() and not pressed:
